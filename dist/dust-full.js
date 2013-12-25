@@ -509,7 +509,7 @@ function getGlobal(){
     this.taps = taps;
   }
 
-  dust.chunk = Chunk;
+  dust.chunk = Chunk
 
   Chunk.prototype.write = function(data) {
     var taps  = this.taps;
