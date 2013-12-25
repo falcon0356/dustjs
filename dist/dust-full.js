@@ -509,6 +509,8 @@ function getGlobal(){
     this.taps = taps;
   }
 
+  dust.chunk = Chunk;
+
   Chunk.prototype.write = function(data) {
     var taps  = this.taps;
 
@@ -559,7 +561,7 @@ function getGlobal(){
   };
 
   Chunk.prototype.reference = function(elem, context, auto, filters) {
-    if (typeof elem === 'function') {
+    if (typeof elem === "function" && elem.name != "observable") {
       elem.isFunction = true;
       // Changed the function calling to use apply with the current context to make sure
       // that "this" is wat we expect it to be inside the function
